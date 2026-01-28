@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sublinter | Registro de Pedido</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  body {
+    background: linear-gradient(135deg, #0f6fff, #cd187b);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+    border: none;
+  }
+
+  .logo {
+    max-height: 90px;
+  }
+
+  .form-control, .form-select {
+    background: #2b2b2b;
+    border: none;
+    color: #fff;
+  }
+
+  .form-control::placeholder {
+    color: #b0b0b0;
+  }
+
+  .form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 2px #ff0080;
+  }
+
+  .section-title {
+    color: #00c8ff;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  .btn-sublinter {
+    background: linear-gradient(135deg, #c71970, #004052);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .btn-sublinter:hover {
+    opacity: 0.9;
+  }
+
+  small {
+    color: #bdbdbd;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container mt-5 mb-5">
+  <div class="card p-4">
+
+    <!-- HEADER -->
+    <div class="text-center mb-4">
+      <img src="img/logo.png" class="logo mb-3" alt="Sublinter">
+      <h3>🧾 Registro de Pedido</h3>
+      <p class="text-muted">Sistema de pedidos – SUBLINTER</p>
+    </div>
+
+    <form
+      action="https://docs.google.com/forms/d/e/1FAIpQLSc2zpLxTTupP56byhaAnsIU2gGzgkW6g3QNawFL2QugPSMEYg/formResponse"
+
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="pedidoEnviado();">
+
+      <!-- ================= DATOS GENERALES ================= -->
+      <h5 class="section-title">📋 Datos generales</h5>
+
+      <div class="mb-3">
+        <label class="form-label">Cliente</label>
+        <input type="text" name="entry.1542955213" class="form-control" placeholder="Nombre del cliente" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Producto</label>
+        <select name="entry.341535844" class="form-select" required>
+          <option value="">Selecciona</option>
+          <option>Playeras personalizadas</option>
+          <option>Stickers</option>
+          <option>Tarjetas de presentación</option>
+          <option>Impresión 3D</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <!-- ================= DETALLE ================= -->
+      <h5 class="section-title">👕 Detalle del pedido</h5>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Cantidad</label>
+          <input type="number" name="entry.484377524" class="form-control" min="1" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Talla</label>
+          <input type="text" name="entry.1541915026" class="form-control" placeholder="CH, M, G, Variadas">
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Color</label>
+          <input type="text" name="entry.1113223225" class="form-control">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Descripción del diseño</label>
+        <textarea name="entry.1385421027" class="form-control" rows="2"></textarea>
+      </div>
+
+      <!-- ================= PAGOS ================= -->
+      <h5 class="section-title">💰 Información de pago</h5>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Precio unitario</label>
+          <input type="number" name="entry.1928481197" class="form-control">
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Anticipo</label>
+          <input type="number" name="entry.1324689769" class="form-control">
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Total</label>
+          <input type="number" name="entry.1542955213" class="form-control">
+        </div>
+      </div>
+
+      <!-- ================= REFERENCIAS ================= -->
+      <h5 class="section-title">📎 Archivos de referencia</h5>
+
+      <div class="mb-3">
+        <label class="form-label">Enlace a archivos (Drive)</label>
+        <input
+          type="url"
+          name="entry.1541915026"
+          class="form-control"
+          placeholder="https://drive.google.com/..."
+          required>
+        <small>Sube el archivo a Drive y pega el enlace aquí</small>
+      </div>
+
+      <!-- ================= ESTADO ================= -->
+      <input type="hidden" name="entry.1542955213" value="Pendiente">
+
+      <!-- ================= FECHA ================= -->
+      <input type="hidden" name="entry.1637866128_year">
+      <input type="hidden" name="entry.1637866128_month">
+      <input type="hidden" name="entry.1637866128_day">
+
+      <!-- BOTÓN -->
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-sublinter w-100">
+          🚀 Registrar Pedido
+        </button>
+      </div>
+
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+  </div>
+</div>
+
+<script>
+  const hoy = new Date();
+  document.querySelector('[name="entry.1637866128_year"]').value = hoy.getFullYear();
+  document.querySelector('[name="entry.1637866128_month"]').value = hoy.getMonth() + 1;
+  document.querySelector('[name="entry.1637866128_day"]').value = hoy.getDate();
+
+  function pedidoEnviado() {
+    setTimeout(() => {
+      alert("Pedido registrado correctamente ✅");
+      window.location.href = "index.html";
+    }, 800);
+  }
+</script>
+
+</body>
+</html>
