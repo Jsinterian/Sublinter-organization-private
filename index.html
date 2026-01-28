@@ -1,202 +1,398 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Sublinter | Registro de Pedido</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  body {
-    background: linear-gradient(135deg, #0f6fff, #cd187b);
-    color: #ffffff;
-    font-family: 'Segoe UI', sans-serif;
-  }
-
-  .card {
-    background: #ffffff;
-    border-radius: 22px;
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
-    border: none;
-  }
-
-  .logo {
-    max-height: 90px;
-  }
-
-  .form-control, .form-select {
-    background: #2b2b2b;
-    border: none;
-    color: #fff;
-  }
-
-  .form-control::placeholder {
-    color: #b0b0b0;
-  }
-
-  .form-control:focus, .form-select:focus {
-    box-shadow: 0 0 0 2px #ff0080;
-  }
-
-  .section-title {
-    color: #00c8ff;
-    font-weight: 600;
-    margin-top: 30px;
-  }
-
-  .btn-sublinter {
-    background: linear-gradient(135deg, #c71970, #004052);
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  .btn-sublinter:hover {
-    opacity: 0.9;
-  }
-
-  small {
-    color: #bdbdbd;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sublinter | Servicios Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-
 <body>
-
-<div class="container mt-5 mb-5">
-  <div class="card p-4">
-
-    <!-- HEADER -->
-    <div class="text-center mb-4">
-      <img src="img/logo.png" class="logo mb-3" alt="Sublinter">
-      <h3>🧾 Registro de Pedido</h3>
-      <p class="text-muted">Sistema de pedidos – SUBLINTER</p>
-    </div>
-
-    <form
-      action="https://docs.google.com/forms/d/e/1FAIpQLSc2zpLxTTupP56byhaAnsIU2gGzgkW6g3QNawFL2QugPSMEYg/formResponse"
-
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="pedidoEnviado();">
-
-      <!-- ================= DATOS GENERALES ================= -->
-      <h5 class="section-title">📋 Datos generales</h5>
-
-      <div class="mb-3">
-        <label class="form-label">Cliente</label>
-        <input type="text" name="entry.1542955213" class="form-control" placeholder="Nombre del cliente" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Producto</label>
-        <select name="entry.341535844" class="form-select" required>
-          <option value="">Selecciona</option>
-          <option>Playeras personalizadas</option>
-          <option>Stickers</option>
-          <option>Tarjetas de presentación</option>
-          <option>Impresión 3D</option>
-          <option>Otro</option>
-        </select>
-      </div>
-
-      <!-- ================= DETALLE ================= -->
-      <h5 class="section-title">👕 Detalle del pedido</h5>
-
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Cantidad</label>
-          <input type="number" name="entry.484377524" class="form-control" min="1" required>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="balde3.png" alt="Logo Sublinter" class="logo-img">
+                <div class="logo-text">
+                    <h1>Sublinter</h1>
+                    <p class="tagline">Personalización de calidad</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#pedidos">Pedidos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+    </nav>
 
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Talla</label>
-          <input type="text" name="entry.1541915026" class="form-control" placeholder="CH, M, G, Variadas">
+    <!-- Sección Hero / Inicio -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Servicios de Sublimación Personalizados</h2>
+                <p>Transformamos tus ideas en productos únicos con la más alta calidad. Playeras, tazas, gorras y más con diseños exclusivos.</p>
+                <a href="#pedidos" class="btn-cyan">Ordenar Ahora</a>
+            </div>
+            
+            <!-- Galería de productos -->
+            <div class="product-gallery">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="camisa.png" alt="Playera personalizada Sublinter">
+                        <div class="product-overlay">
+                            <a href="#pedidos" class="btn-small">Pedir</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h4>Playeras Personalizadas</h4>
+                        <p>Diseños únicos en algodón premium</p>
+                    </div>
+                </div>
+                <!-- Agrega más productos aquí si tienes más imágenes -->
+            </div>
         </div>
+    </section>
 
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Color</label>
-          <input type="text" name="entry.1113223225" class="form-control">
+    <!-- Sección de Pedidos Rápidos -->
+    <section id="pedidos" class="pedidos">
+        <div class="container">
+            <h2><i class="fas fa-bolt"></i> Pedido Rápido</h2>
+            <p class="section-subtitle">Llena el formulario y nosotros nos pondremos en contacto contigo a la brevedad.</p>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h3><i class="fas fa-clipboard-list"></i> Formulario de Pedido</h3>
+                    <p>Todos los campos son importantes para procesar tu pedido correctamente.</p>
+                </div>
+                
+                <!-- Google Form incrustado -->
+                <div class="google-form">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2zpLxTTupP56byhaAnsIU2gGzgkW6g3QNawFL2QugPSMEYg/viewform?embedded=true" 
+                            width="100%" 
+                            height="1200" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                        Cargando formulario...
+                    </iframe>
+                </div>
+                
+                <div class="form-footer">
+                    <p><i class="fas fa-info-circle"></i> Después de enviar el formulario, recibirás una confirmación por correo y nosotros te contactaremos en menos de 24 horas.</p>
+                    <p><i class="fas fa-sync-alt"></i> Los datos se guardan automáticamente en nuestro sistema.</p>
+                </div>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon cyan-bg">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h4>1. Completa el formulario</h4>
+                    <p>Llena todos los campos con los detalles de tu pedido</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon magenta-bg">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>2. Recibe confirmación</h4>
+                    <p>Te llegará un correo con los datos de tu pedido</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon yellow-bg">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>3. Contacto personal</h4>
+                    <p>Nos comunicaremos contigo para afinar detalles</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon black-bg">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>4. Entrega</h4>
+                    <p>Tu pedido personalizado listo para entregar</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="mb-3">
-        <label class="form-label">Descripción del diseño</label>
-        <textarea name="entry.1385421027" class="form-control" rows="2"></textarea>
-      </div>
-
-      <!-- ================= PAGOS ================= -->
-      <h5 class="section-title">💰 Información de pago</h5>
-
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Precio unitario</label>
-          <input type="number" name="entry.1928481197" class="form-control">
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <h2><i class="fas fa-concierge-bell"></i> Nuestros Servicios</h2>
+            <p class="section-subtitle">Ofrecemos una amplia variedad de productos personalizados con sublimación</p>
+            
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon cyan-bg">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Playeras Personalizadas</h3>
+                    <p>Playeras de alta calidad con diseños únicos y duraderos. Variedad de tallas y colores disponibles.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon magenta-bg">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3>Tazas y Termos</h3>
+                    <p>Personalizamos tazas cerámicas, termos de acero y más. Perfectos para regalos empresariales.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon yellow-bg">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <h3>Gorras y Sombreros</h3>
+                    <p>Gorras deportivas, truckers y más con tu diseño. Ideal para equipos deportivos o eventos.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon black-bg">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Artículos Promocionales</h3>
+                    <p>Llaveros, mousepads, rompecabezas y más. Excelente para ferias y promociones.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Anticipo</label>
-          <input type="number" name="entry.1324689769" class="form-control">
+    <!-- Sección de Contacto ACTUALIZADA -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2><i class="fas fa-address-book"></i> Contacto Directo</h2>
+            <p class="section-subtitle">Estamos en Dzitbalché para atenderte personalmente</p>
+            
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <!-- WhatsApp -->
+                    <div class="contacto-item">
+                        <div class="contacto-icon whatsapp-bg">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp Directo</h4>
+                            <p>Contáctanos para consultas rápidas y cotizaciones</p>
+                            <a href="https://wa.me/message/JPW7DR5BTRDZN1" 
+                               target="_blank" 
+                               class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+                            </a>
+                            <p class="contacto-nota">Respuesta en minutos</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ubicación -->
+                    <div class="contacto-item">
+                        <div class="contacto-icon location-bg">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Ubicación en Dzitbalché</h4>
+                            <p class="ubicacion-detalle">Dzitbalché, Campeche</p>
+                            <p class="ubicacion-nota">Calle 19 #83 22 x 24 Pulyaxche</p>
+                            <a href="https://maps.google.com/?q=Dzitbalché+Campeche" 
+                               target="_blank" 
+                               class="btn-mapa">
+                                <i class="fas fa-map"></i> Ver en Google Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Horario -->
+                    <div class="contacto-item">
+                        <div class="contacto-icon horario-bg">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p><strong>Lunes a Viernes:</strong> 9:00 AM - 7:00 PM</p>
+                            <p><strong>Sábados:</strong> 9:00 AM - 4:00 PM</p>
+                            <p><strong>Domingos:</strong> Solo pedidos urgentes</p>
+                            <p class="contacto-nota">Pedidos por WhatsApp: 24/7</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Instagram y Facebook -->
+                    <div class="contacto-item">
+                        <div class="contacto-icon instagram-bg">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h4>Instagram & Facebook</h4>
+                            <p>Síguenos para ver nuestros trabajos</p>
+                            <a href="https://www.instagram.com/sublinter_mx?igsh=MW9kdGtsNGl3NmNoMg==" 
+                               target="_blank" 
+                               class="instagram-link">
+                                <i class="fab fa-instagram"></i> @sublinter_mx
+                            </a>
+                            <br>
+                            <a href="https://www.facebook.com/profile.php?id=100092493694062" 
+                               target="_blank" 
+                               class="facebook-link">
+                                <i class="fab fa-facebook"></i> Sublinter Dzitbalché
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contacto-form">
+                    <h3>¿Prefieres escribirnos?</h3>
+                    <p>Si tienes preguntas específicas sobre tu pedido:</p>
+                    
+                    <div class="contacto-botones">
+                        <!-- Botón WhatsApp grande -->
+                        <a href="https://wa.me/message/JPW7DR5BTRDZN1" 
+                           target="_blank" 
+                           class="btn-whatsapp-large">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Rápido
+                            <span class="btn-subtext">Responde en minutos</span>
+                        </a>
+                        
+                        <!-- Botón formulario -->
+                        <a href="#pedidos" class="btn-formulario">
+                            <i class="fas fa-clipboard-list"></i> Formulario de Pedido
+                            <span class="btn-subtext">Para pedidos detallados</span>
+                        </a>
+                        
+                        <!-- Botón Instagram -->
+                        <a href="https://www.instagram.com/sublinter_mx?igsh=MW9kdGtsNGl3NmNoMg==" 
+                           target="_blank" 
+                           class="btn-instagram">
+                            <i class="fab fa-instagram"></i> Ver en Instagram
+                            <span class="btn-subtext">Nuestros trabajos</span>
+                        </a>
+                    </div>
+                    
+                    <div class="contacto-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Recomendación:</h4>
+                        <p>Para <strong>cotizaciones rápidas</strong> usa WhatsApp. Para <strong>pedidos completos</strong> usa el formulario.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="col-md-4 mb-3">
-          <label class="form-label">Total</label>
-          <input type="number" name="entry.1542955213" class="form-control">
+    <!-- Pie de página ACTUALIZADO -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Columna 1: Logo y dirección -->
+                <div class="footer-logo">
+                    <div class="footer-brand">
+                        <img src="logo-sublinter.png" alt="Sublinter Logo" class="footer-logo-img">
+                        <h3>Sublinter</h3>
+                    </div>
+                    <p>Servicios de diseño y personalizados en Dzitbalché, Campeche.</p>
+                    
+                    <!-- DIRECCIÓN Y MAPA -->
+                    <div class="footer-direccion">
+                        <h4><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h4>
+                        <p class="direccion-texto">Zona Centro, Dzitbalché, Campeche</p>
+                        <a href="https://maps.google.com/?q=Dzitbalché+Campeche" 
+                           target="_blank" 
+                           class="btn-mapa">
+                            <i class="fas fa-map"></i> Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-links">
+                    <h4><i class="fas fa-link"></i> Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="#pedidos"><i class="fas fa-bolt"></i> Pedido Rápido</a></li>
+                        <li><a href="#servicios"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+                        <li><a href="#contacto"><i class="fas fa-address-book"></i> Contacto</a></li>
+                    </ul>
+                    
+                    <!-- Horario en footer -->
+                    <div class="footer-horario">
+                        <h5><i class="fas fa-clock"></i> Horario</h5>
+                        <p>Lun-Vie: 9AM - 7PM</p>
+                        <p>Sáb: 9AM - 4PM</p>
+                    </div>
+                </div>
+                
+                <!-- Columna 3: Redes sociales -->
+                <div class="footer-contact">
+                    <h4><i class="fas fa-share-alt"></i> Conéctate</h4>
+                    
+                    <!-- REDES SOCIALES -->
+                    <div class="social-links">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/message/JPW7DR5BTRDZN1" 
+                           target="_blank" 
+                           class="social-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="social-text">WhatsApp</span>
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/sublinter_mx?igsh=MW9kdGtsNGl3NmNoMg==" 
+                           target="_blank" 
+                           class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span class="social-text">Instagram</span>
+                        </a>
+                        
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=100092493694062" 
+                           target="_blank" 
+                           class="social-link facebook">
+                            <i class="fab fa-facebook"></i>
+                            <span class="social-text">Facebook</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Información de contacto -->
+                    <div class="footer-info">
+                        <div class="info-item">
+                            <i class="fas fa-store"></i>
+                            <div>
+                                <h5>Tienda Física</h5>
+                                <p>Dzitbalché, Campeche</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <h5>Envíos</h5>
+                                <p>A toda la península</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="copyright">
+                        <p>© 2024 Sublinter | Personalización profesional</p>
+                        <p class="copyright-small">Dzitbalché, Campeche, México</p>
+                    </div>
         </div>
-      </div>
+    </footer>
 
-      <!-- ================= REFERENCIAS ================= -->
-      <h5 class="section-title">📎 Archivos de referencia</h5>
+    <!-- Botón flotante de WhatsApp (solo ícono) -->
+    <a href="https://wa.me/message/JPW7DR5BTRDZN1" 
+       target="_blank" 
+       class="whatsapp-float">
+       <i class="fab fa-whatsapp"></i>
+    </a>
 
-      <div class="mb-3">
-        <label class="form-label">Enlace a archivos (Drive)</label>
-        <input
-          type="url"
-          name="entry.1541915026"
-          class="form-control"
-          placeholder="https://drive.google.com/..."
-          required>
-        <small>Sube el archivo a Drive y pega el enlace aquí</small>
-      </div>
+    <!-- Botón flotante para pedidos (solo ícono) -->
+    <a href="#pedidos" class="floating-order-btn">
+        <i class="fas fa-bolt"></i>
+    </a>
 
-      <!-- ================= ESTADO ================= -->
-      <input type="hidden" name="entry.1542955213" value="Pendiente">
-
-      <!-- ================= FECHA ================= -->
-      <input type="hidden" name="entry.1637866128_year">
-      <input type="hidden" name="entry.1637866128_month">
-      <input type="hidden" name="entry.1637866128_day">
-
-      <!-- BOTÓN -->
-      <div class="text-center mt-4">
-        <button type="submit" class="btn btn-sublinter w-100">
-          🚀 Registrar Pedido
-        </button>
-      </div>
-
-    </form>
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-
-  </div>
-</div>
-
-<script>
-  const hoy = new Date();
-  document.querySelector('[name="entry.1637866128_year"]').value = hoy.getFullYear();
-  document.querySelector('[name="entry.1637866128_month"]').value = hoy.getMonth() + 1;
-  document.querySelector('[name="entry.1637866128_day"]').value = hoy.getDate();
-
-  function pedidoEnviado() {
-    setTimeout(() => {
-      alert("Pedido registrado correctamente ✅");
-      window.location.href = "index.html";
-    }, 800);
-  }
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
